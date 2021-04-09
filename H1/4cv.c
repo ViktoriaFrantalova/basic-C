@@ -1,5 +1,5 @@
 #include <stdio.h>
-// program ohladom v7beru mat. operacii zo zoznamu pomocou znakou
+// program ohladom vyberu mat. operacii zo zoznamu pomocou znakou
 int main()
 {
     float a = 0.0, b = 0.0;

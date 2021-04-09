@@ -88,3 +88,165 @@ d = (a + b) / c;  // Scita se a plus b a potom sa to vydeli c
 
 ### Funkcia `printf()` - výstup textu na obrazoku
 Slúži k výpisu textu na obrazovku (terminál)
+Miesto v texte, kde sa vypíše hodnota premenných sa špecifikuje pomocou formátových prvkov: 
+  - `%i` pre premennú typu `int`
+  - `%f` pre premennú typu `float`
+  - `%c` pre premennú typu `char`
+- špeciálny znak `\n` sposobý prechod na nový riadok
+
+```c
+int a = 3, b = 6, c = 9;
+float m = 2.71, n = 14.3;
+char c1 = 'D', c2 = 'j';
+
+printf("Jednoduchy text\n");
+printf("Cislo a ma hodnotu %i zatial co b je %i\n", a, b);
+printf("Vypis celeho cisla %i a desetinneho cisla %f\n", c, m);
+printf("Vypis dvoch znakov za sebou: %c%c\n", c1, c2);
+```
+
+### Použitie matematických funkcií
+Pre sprístupnenie matematických funkcí musíme pridat na začiatok programu **#include <math.h>**
+Pri kompilácii je potreba pridať matematicku knihovnu pomoco `-lm` (l ako library a m ako math)
+```c
+gcc -o mojprgogram mojprogram.c -lm
+```
+Najpoužívajnešie matematické funkcie:
+`sqrt(x)` - odmocnina z x
+`pow(x, y)` - x umocnena na y
+`exp(x)` - e na x
+`log(x)` - prirodzený logaritmus x
+`cos(x)` - kosinus x
+`sin(x)` - sinus x
+
+```c
+int n = 3;
+float a = 7.3, b = 2.5, result = 0.0;
+
+result = sqrt(a);
+result = pow(a, n) + 7.4;
+result = a + cos(b);
+result = (sqrt(a) + sqrt(b)) / 2;
+```
+
+### Funkcia `scanf()` - čítanie vstupu z klávesnice
+Slúži k získaniu vstupu z klávesnice
+Prvým parametrom funkcie je fomátovací text, kt obsahuje jeden alebo viacerých formatovacích prvkov
+Do formátovacieho textu sa nezadáva žiaden text, používaju sa iba formátovacie prvky
+S pravdla je treba uživateľa vyzvat ku zadaniu hodnoty a preto sa volá naprv funkcia `printf()`
+Za formátovací text funkcie `scanf()` zapíšeme toľko premenných, koľko bolo použitých formatovácich prvkov
+POZOR !!! pred názovv premenných musíme vložiť znak `&`
+
+```c
+int a = 0;
+float m = 0.0, n = 0.0;
+
+printf("Zadej cele cislo a stiskni Enter: ");
+scanf("%i", &a);
+printf("Zadej dve desetinna cisla oddelena mezerou: ");
+scanf("%f %f", &m, &n);
+```
+
+```c
+int main()
+{
+  float a = 0.0, b = 0.0, c = 0.0;
+  printf("Zadej A a B oddelene mezerou a stiskni Enter: ");
+  scanf("%f %f", &a, &b);
+  c = a + b;
+  
+  printf("Soucet %f a %f je %f\n", a, b, c);
+  return 0;
+}
+```
+
+### Príkaz podmienky `if`
+Príkaz slúži k podmienenému prevedení príkazu
+```c
+ int a = 4, b = 0;
+  
+  if (a > 3)
+    b = 10;     // Tento prikaz sa prevedie iba ak a je vacsie 3
+  
+    
+  if (a > 8)
+    b = 10;     // Tento prikaz sa prevedie iba ak a je vacsie 8
+  else
+    b = 0;      // Tento prikaz sa prevedie iba ak a nie je vacsie 8 
+```
+
+Pokiaľ je potreba vykonať viac ako jeden príkaz, tak sa používaju zložené zátvorky `{}`
+
+```c
+int a = 4, b = 0, c = 0, d = 0;
+  
+  if (a > 3)
+  {
+    b = 10;
+    c = a + b;
+  }
+    
+  if (a > 8)
+  {
+    b = 5; 
+    c = a ­ b;
+  }
+  else
+  {
+    b = 7;      
+    d = a + b
+  }
+```
+
+### Logické operátory
+Vyhodnocujú sa podľa priorit:
+- najvačšia:
+`<` - menší
+`<=` - menší alebo rovný
+`>` - vačší
+`>=` - vačší alebo rovný
+- menšia:
+`==` - rovnosť
+`!=` - nerovnosť
+- najmenšia:
+`||` - alebo (OR)
+`&&` - a zároveň (AND)
+
+Priority sa dajú ovplyvniť pomocou zátvoriek
+
+```c
+int a = 4, b = 5, c = 9;
+char ch1 = 'A', ch2 = 'D';
+  
+if (a == 3)                // Jednoducha podmienka
+if (a != 3)                // Jednoducha podmienka
+if (b <= 3)                // Jednoducha podmienka
+if (ch1 == 'B')            // Jednoducha podmienka 
+if (ch1 != 'h')            // Jednoducha podmienka
+if (a > 3 && b <= c)       // Trochu zlozitejsia podmienka
+if ((a > 3) && (b <= c))   // Rovnaka podmienka ale s pouzitim zatvoriek
+  
+if (a > 3 || b != c && b <= c)   // Prioritu ma && pred ||
+if (a > 3 || (b != c && b <= c)) // Rovnako s pouzitim zatvoriek
+if ((a > 3 || b != c) && b <= c) // Tu zatvorky zmenily poradie vyhodnocovania
+```
+
+príklad: 
+  Program načíta z klávesniice celé čísla a, b a vypíše, ktoré je vačšie
+```c
+int main()
+{
+  int a = 0, b = 0;
+  printf("Zadaj A a B oddelene medzerou a stiskni Enter: ");
+  scanf("%i %i", &a, &b);
+  if (a == b)
+  {
+    printf("Vysledok: A je rovne B\n");
+  }
+  else
+  {
+    printf("Vysledok: A je rozne od B\n");
+  }
+  return 0;
+}
+```

@@ -1,5 +1,5 @@
 #include <stdio.h>
-// // program kt si vyziada od uzivatela cele kladne cislo a urci ci sa jedna o prvocislo
+// program kt si vyziada od uzivatela cele kladne cislo a urci ci sa jedna o prvocislo
 int main()
 {
     int n = 0, i = 0, modulo = 0, prvocislo = 1;

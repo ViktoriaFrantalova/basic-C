@@ -27,14 +27,14 @@ int main() //vypise zoznam cisel s ich hodnotami
     fprintf(f, "%- 5i %5i %+8i %10.3f %- f %-+1.4f\n", i, i * i, i * i * i, exp(i), sin(i), cos(i));
 
     // FORMATOVANIE VÝSTUPU
-    // %[příznaky][šířka][.přesnost][modifikátor]konverze]
+    // %[príznaky][šírka][.presnost][modifikátor]konverzia]
 
-    //Celé číslo, min. 5 zn., zarov. doleva, kladná č. na začátku s mezerou = %- 5i
-    //Celé číslo, min.5 znaků, zarov.doprava = %5i
-    //Celé číslo, min.8 znaků, tiskne vždy znaménko + nebo - = %+8i
-    //Desetinné číslo, min.10 znaků, 3 desetinná místa, zarov.doprava = %10.3f
-    //Desetinné číslo, zarov.doleva, kladná č.na začátku s mezerou = %- f
-    //Desetinné číslo, 4 desetinná místa, zarov.doleva, tiskne vždy + nebo - Sloupce jsou navíc vždy ddělěny jednou mezerou= %-+1.4f
+    //Celé číslo, min. 5 zn., zarov. dolava, kladná č. na začiatku s medzerou = %- 5i
+    //Celé číslo, min.5 znakov, zarov.doprava = %5i
+    //Celé číslo, min.8 znakov, tiskne vždy znamienko + alebo - = %+8i
+    //Desatinné číslo, min.10 znakov, 3 desatinné miesta, zarov.doprava = %10.3f
+    //Desatinné číslo, zarov.dolava, kladné č.na začiatku s medzerou = %- f
+    //Desatinné číslo, 4 desetinné miesta, zarov.dolava, tiskne vždy + alebo - Stlpce su naviac vždy oddelene jednou medzerou= %-+1.4f
   }
 
   system("code U4.txt"); // vyvolanie príkazu systému, kt. je interpretovaný shell systemom/príkaz sa zapisuje rovnako akoby sme ho písali do terminalu

@@ -1,5 +1,5 @@
 #include <stdio.h>
-// nedokonceny program na vzpisovanie prvocislic oodelene ciarkou, vzdy desat prvocisel na kazdom riadku
+// nedokonceny program na vypisovanie prvocislic oddelene ciarkou, vzdy desat prvocisel na kazdom riadku
 int main()
 {
     int n = 0, i = 0, modulo = 0, prvocislo = 1;

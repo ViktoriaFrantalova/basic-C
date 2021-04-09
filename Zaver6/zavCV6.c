@@ -1,8 +1,8 @@
 /* Viktória Galliková, jar 2019
 -----------------------------------------------------
-program, který spočítá vzdálenosti C-alfa uhlíkových
-atomů residuí od centra molekuly a navíc načte z PDB
-souboru informace o sekundární struktuře (alfa-šroubovicích a beta-listech). Potom zobrazí graf reprezentující vzdálenost Calfa atomů od centra s vyznačením alfa-helixů a beta-listů */
+program, ktorý spočítá vzdialenosti C-alfa uhlíkových
+atomov residuí od centra molekuly a naviac načita z PDB
+suboru informacie o sekundárnej strukture (alfa-šroubovicích a beta-listech). Potom zobrazí graf reprezentující vzdálenost Calfa atomov od centra s vyznačením alfa-helixom a beta-listu */
 
 #include <stdio.h>
 #include <string.h>
@@ -13,7 +13,7 @@ souboru informace o sekundární struktuře (alfa-šroubovicích a beta-listech)
 #define BUF_SIZE 1000
 
 typedef struct
-{ //definice struktury residui
+{ //definicia struktury residui
   int prvy_atom;
   int posledny_atom;
   int cisloresidua;
