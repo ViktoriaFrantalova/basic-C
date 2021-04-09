@@ -85,3 +85,6 @@ d = c % a;    // Zbytok po deleni cisla 13 cislom 5 co je 3
 d = a + b / c;   // Prevedie se delenie b/c, potom sa pripocita a
 d = (a + b) / c;  // Scita se a plus b a potom sa to vydeli c
 ```
+
+### Funkcia `printf()` - výstup textu na obrazoku
+Slúži k výpisu textu na obrazovku (terminál)
